@@ -1,0 +1,31 @@
+// => inserer les donnees d'un fichier json 
+✅ Qu’est-ce qu’une transaction en base de données ?
+Une transaction est un bloc d’opérations SQL qui sont exécutées ensemble, comme un tout.
+Soit tout réussit, soit rien ne change.
+
+Exemple sans transaction
+text
+Copy
+Edit
+✔ Employé 1 inséré
+✔ Employé 2 inséré
+...
+❌ Employé 17 échoue → les 16 premiers RESTENT malgré l'erreur
+
+
+🔐 Exemple avec transaction
+text
+Copy
+Edit
+✔ Employé 1 inséré en mémoire
+✔ Employé 2 inséré en mémoire
+...
+❌ Employé 17 échoue → ROLLBACK → aucun employé inséré
+
+
+✅ En résumé :
+Avantage	              Sans transaction	                       Avec transaction
+Sécurité des données   ❌ Risque d’incohérence	 ✅ Tout ou rien
+Gestion des erreurs	 ❌ Manuelle	                  ✅ Automatique (rollback)
+Vitesse	                        🐢 Moins rapide	                🚀 Plus rapide
+Nettoyage	              ❌ Incomplet possible	  ✅ Cohérent
